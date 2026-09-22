@@ -15,13 +15,13 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 4. **File Signature Verification:** Used Gary Kessler's File Signature Analysis resource to identify the actual file type based on its magic number.
 
-5.**File Reconstruction:** After confirming the actual file type, saved the file in its identified format using the appropriate file extension.
+5. **File Reconstruction:** After confirming the actual file type, saved the file in its identified format using the appropriate file extension.
 
 6. **Additional File Analysis:** Repeated the file signature identification and reconstruction process for other embedded files.
 
 7. **Metadata Extraction:** Used ExifTool to extract metadata from the ZIP archive recovered from the email.
 
-8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. The files returned clean results with no detections.
+8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. T
 
 
 
