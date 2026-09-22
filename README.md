@@ -6,11 +6,12 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 ## Steps I Took
 
-1. **Email Analysis:** Downloaded the email file and opened it using Notepad++ in a controlled Windows lab environment.
+1. **Email Analysis: Downloaded the email file and opened it using Notepad++ in a controlled Windows lab environment. I then identified the sender's domain and checked its reputation on VirusTotal.
 
-2. **Base64 Decoding:** Used CyberChef to decode Base64-encoded content found in the email.
+2. **Base64 Decoding of the text:** Used CyberChef to decode Base64-encoded content found in the email.
 
-3. **File Extraction and Identification:** Copied the PDF's Base64 content into CyberChef, decoded it, and converted the output to hexadecimal to examine its file signature (magic number).
+3. **File Extraction and Identification:** Copied the raw Base64 text into CyberChef and decoded it. I then applied the Hex operation to identify the file's magic number and determine its actual file type. After confirming the file type, I removed the Hex operation in CyberChef. The file turned out to be a ZIP archive, so I saved it as a `.zip` file for further analysis.
+
 
 4. **File Signature Verification:** Used Gary Kessler's File Signature Analysis resource to identify the actual file type based on its magic number.
 
@@ -19,6 +20,10 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 6. **Additional File Analysis:** Repeated the file signature identification and reconstruction process for other embedded files.
 
 7. **Metadata Extraction:** Used ExifTool to extract metadata from the ZIP archive recovered from the email.
+
+8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. The files returned clean results with no detections.
+
+
 
 ## Tools I Used
 
@@ -33,6 +38,7 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 | Header Field             | Purpose                                                                                                                                                                             |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `From`               | Identifies the sender of the email and is crucial during the investigation. I can investigate the sender's email address, domain, and associated infrastructure to identify potential indicators of compromise and perform OSINT. |
 | `Received`               | Shows email server hops involved in delivering the message. I can use these details to investigate sending infrastructure and perform OSINT on associated domains and IP addresses. |
 | `Delivered-To`           | Identifies the recipient address to which the email was delivered.                                                                                                                  |
 | `Return-Path`            | Contains the address used for handling email delivery failures (bounces).                                                                                                           |
