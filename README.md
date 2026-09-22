@@ -21,7 +21,7 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 7. **Metadata Extraction:** Used ExifTool to extract metadata from the files recovered from the email.
 
-8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. T
+8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. 
 
 
 
