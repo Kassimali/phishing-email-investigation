@@ -45,3 +45,5 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 * Identifying file types using hexadecimal signatures (magic numbers).
 * Reconstructing files based on their actual file types.
 * Extracting metadata from archives and supporting further investigation through email header analysis.
+
+Please refer to the full report for further details on the investigation.
