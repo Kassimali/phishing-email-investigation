@@ -6,7 +6,7 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 ## Steps I Took
 
-1. **Email Analysis: Downloaded the email file and opened it using Notepad++ in a controlled Windows lab environment. I then identified the sender's domain and checked its reputation on VirusTotal.
+1. **Email Analysis**: Downloaded the email file and opened it using Notepad++ in a controlled Windows lab environment. I then identified the sender's domain and checked its reputation on VirusTotal.
 
 2. **Base64 Decoding of the text:** Used CyberChef to decode Base64-encoded content found in the email.
 
