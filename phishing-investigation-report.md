@@ -1,43 +1,52 @@
-Phishing Email Investigation Report
+# Phishing Email Investigation Report
 
-Findings
+## Findings
 
-Time: 2021-01-26 01:41:18 EST
+**Time:** 2021-01-26 09:41:18 EAT
 
-Sender: billjobs@microapple[.]com
+**Sender:** billjobs@microapple[.]com
 
-Recipient: themajoronearth@gmail[.]com
+**Recipient:** themajoronearth@gmail[.]com
 
-IOC Domain: pashter[.]com
+**IOC Domain:** pashter[.]com
 
-IOC IP: 93[.]99[.]104[.]210
+**IOC IP:** 93[.]99[.]104[.]210
 
-Potentially Malicious Files: DaughtersCrown.jpeg, GoodJobMajor.pdf, Money.xlsx
+**Malicious Files:** DaughtersCrown.jpeg, GoodJobMajor.pdf, Money.xlsx
 
-Investigation
+## Investigation
 
-On January 26, 2021, at 01:41:18 EST, TheMajorOnEarth received a suspicious email from Pestero Negeja demanding 1 billion CoCanDs to release abducted CoCanDians.
+On January 26, 2021, at 09:41:18 EAT, TheMajorOnEarth received a suspicious email from Pestero Negeja demanding 1 billion CoCanDs to release abducted CoCanDians.
 
 Analysis of the email headers revealed an SPF authentication failure and a mismatch between the From and Reply-To addresses, both of which are potential phishing indicators.
 
-Three potentially malicious files were identified: DaughtersCrown.jpeg, GoodJobMajor.pdf, and Money.xlsx. However, their maliciousness has not been confirmed.
+Three suspicious files were identified: DaughtersCrown.jpeg, GoodJobMajor.pdf, and Money.xlsx. Initial file reputation checks on VirusTotal returned clean results. However, I continued the investigation by analyzing Sysmon logs to investigate the behavior of the files after execution.
 
-Who: Pestero Negeja sent the suspicious email.
+The Sysmon analysis revealed that the files executed malicious commands and made unusual network connections. This provided behavioral evidence that was not identified through the initial file reputation checks.
 
-What: A suspicious email containing a ransom demand was received.
+## Who, What, When, Where, Why, How
 
-When: January 26, 2021, at 01:41:18 EST.
+**Who:** Pestero Negeja sent the suspicious email.
 
-Where: TheMajorOnEarth's email account.
+**What:** A suspicious email containing a ransom demand and malicious files was received.
 
-Why: The email aimed to force the recipient into making a payment. Whether it was also intended to compromise the organization remains unconfirmed.
+**When:** January 26, 2021, at 09:41:18 EAT.
 
-How: The email contained potentially malicious attachments that require further analysis.
+**Where:** TheMajorOnEarth's email account.
 
-Recommendations
+**Why:** The email attempted to pressure the recipient into making a payment and also involved activity that could lead to system compromise.
 
-Investigate whether the recipient opened the attachments and whether any compromise or unauthorized access occurred.
+**How:** The email contained files that, when executed, were observed through Sysmon to execute malicious commands and make unusual network connections.
 
-Identify the scope of the incident and any other affected users or systems.
+## Conclusion
 
-Analyze the identified files in an isolated sandbox to determine whether they contain malicious content or could have enabled initial access.
+The investigation confirmed that the email contained malicious files. Although the initial VirusTotal checks returned clean results, deeper behavioral analysis using Sysmon revealed malicious command execution and unusual network activity.
+
+This investigation demonstrated the importance of not relying solely on file reputation or static indicators. Endpoint telemetry and behavioral analysis provided additional evidence that helped identify malicious activity.
+
+## Recommendations
+
+* Investigate the identified network connections and IOC domain/IP for additional affected systems.
+* Determine whether the malicious files established persistence or performed additional actions.
+* Identify the full scope of the activity and any other affected users or systems.
+
