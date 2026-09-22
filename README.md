@@ -10,7 +10,7 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 2. **Base64 Decoding of the text:** Used CyberChef to decode Base64-encoded content found in the email.
 
-3. **File Extraction and Identification:** Copied the raw Base64 text into CyberChef and decoded it. I then applied the Hex operation to identify the file's magic number and determine its actual file type. After confirming the file type, I removed the Hex operation in CyberChef. The file turned out to be a ZIP archive, so I saved it as a `.zip` file for further analysis.
+3. **File Extraction and Identification:** Copied the raw Base64 text into CyberChef and decoded it. I then applied the Hex operation to identify the file's magic number and determine its actual file type. After confirming the file type, I removed the Hex operation in CyberChef. 
 
 
 4. **File Signature Verification:** Used Gary Kessler's File Signature Analysis resource to identify the actual file type based on its magic number.
