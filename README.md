@@ -19,7 +19,7 @@ In this lab, I investigated a phishing email in a controlled Windows environment
 
 6. **Additional File Analysis:** Repeated the file signature identification and reconstruction process for other embedded files.
 
-7. **Metadata Extraction:** Used ExifTool to extract metadata from the ZIP archive recovered from the email.
+7. **Metadata Extraction:** Used ExifTool to extract metadata from the files recovered from the email.
 
 8. **File Reputation Check:** Finally, I checked the SHA-256 hashes of the extracted files on VirusTotal. T
 
